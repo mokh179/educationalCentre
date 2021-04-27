@@ -11,5 +11,6 @@ namespace JwtTest.services
         Task<Authmodel> RegisterAsync(Registermodel rm);
         Task<Authmodel> LoginAsync(Loginmodel lm);
         Task<string> assignRole(Role r);
+        Task<bool> resetPasswoord(ResetPassword pw);
     }
 }

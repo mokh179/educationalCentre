@@ -18,5 +18,7 @@ namespace JwtTest.Models
         [ForeignKey("Department")]
         public int DeptId { get; set; }
         public Department Department { get; set; }
+        public List<studentcourses> Studentcourses { get; set; }
+
     }
 }

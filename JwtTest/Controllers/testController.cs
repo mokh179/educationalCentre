@@ -51,5 +51,15 @@ namespace JwtTest.Controllers
                 return BadRequest(res);
             return Ok(r);
         }
+        [HttpPost("ResetPassword")]
+        public async Task<IActionResult> ResetPassword([FromBody] ResetPassword pw)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            if(!await _auth.resetPasswoord(pw))
+                return BadRequest("Something went wrong or incorret Password");
+            return Ok();
+        }
+
     }
 }

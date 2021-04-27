@@ -4,14 +4,16 @@ using JwtTest.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JwtTest.Migrations
 {
     [DbContext(typeof(Appcontext))]
-    partial class AppcontextModelSnapshot : ModelSnapshot
+    [Migration("20210427121326_Courses")]
+    partial class Courses
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

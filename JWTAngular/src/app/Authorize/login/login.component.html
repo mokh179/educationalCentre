@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="alert alert-danger" *ngIf="fl">Ivalid userName or Pass</div>
+    <div class="form-group">
+        <label for="Username">Username</label>
+        <input type="text" [(ngModel)]="log.userName"
+          class="form-control" name="Username" id="Username" aria-describedby="helpId" placeholder="Username">
+      </div>
+      <div class="form-group">
+          <label for="Password">Password</label>
+          <input type="password" [(ngModel)]="log.password"
+            class="form-control" name="Password"  id="Password" aria-describedby="helpId" placeholder="Password">
+        </div>
+        <div class="form-group text-center">
+            <button class="btn btn-success" (click)="login()">Add</button>
+        </div>
+        <button class="btn btn-success" (click)="logout()">out</button>
+    </div>

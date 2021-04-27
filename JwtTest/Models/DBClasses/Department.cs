@@ -14,5 +14,6 @@ namespace JwtTest.Models
         public int DeptID { get; set; }
         public string DeptName { get; set; }
         public List<users> Users { get; set; }
+        public List<DepartmentCourse> departmentCourses { get; set; }
     }
 }

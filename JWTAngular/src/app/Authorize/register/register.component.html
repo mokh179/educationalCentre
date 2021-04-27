@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="mycard">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="LeftCTN">
+                         <div  class="myform text-center">
+                             <header>Create New Account</header>
+                             <div class="alert alert-danger" *ngIf="fl" style="margin: 5px;">{{mes}}</div>
+                             
+                             <div class="row">
+                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="myInput-in" placeholder="Firstname *" id="Firstname" required [(ngModel)]="reg.firstName">
+                                        <div class="invalid-feedback">Please fill this field</div>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="myInput-in" placeholder="Lastname *" id="Lastname" #name required [(ngModel)]="reg.lastName">
+                                        <div class="invalid-feedback">Please fill this field</div>
+                                    </div>
+                                </div>
+                             </div>
+    
+                             <div class="form-group">
+                                <i class="fa fa-user" aria-hidden="true"></i>                                     
+                                <input class="myInput" placeholder="Username *" id="Username" required [(ngModel)]="reg.userName">
+                                <div class="invalid-feedback">Please fill this field</div>
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <!-- <i class="fa fa-mail" aria-hidden="true"></i>                                      -->
+                                <input class="myInput" placeholder="E-mail *" id="E-mail" required [(ngModel)]="reg.email">
+                                <div class="invalid-feedback">Please fill this field</div>
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                <!-- <i class="fa fa-mail" aria-hidden="true"></i>                                      -->
+                                <input class="myInput" type="password" placeholder="Password *" id="pass" required [(ngModel)]="reg.password">
+                                <div class="invalid-feedback">Please fill this field</div>
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                <!-- <i class="fa fa-mail" aria-hidden="true"></i>                                      -->
+                                <input class="myInput" type="password" placeholder="Confirm Password *" id="pass" required [(ngModel)]="reg.cpassword">
+                                <div class="invalid-feedback">Please fill this field</div>
+                            </div>
+                             <input class="register" type="submit" value="SignUp" (click)="signUp()" >
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="RightCTN">
+                    <div class="box">
+                        <img src="../../../assets/Pics/register.png" class="reg" alt="sign-Up">
+                        <a class="signIn" type="button" routerLink="/Login">SignIn</a>
+                    </div>
+                </div>                    
+            </div>
+
+        </div>
+    </div>
+</div>

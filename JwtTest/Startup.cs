@@ -23,7 +23,8 @@ namespace JwtTest
 {
     public class Startup
     {
-        private string encors;
+       
+        readonly private string MyAllowSpecificOrigins= "_myAllowSpecificOrigins";
 
         public Startup(IConfiguration configuration)
         {
@@ -35,15 +36,16 @@ namespace JwtTest
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(op => {
-                op.AddPolicy(name: encors, bu =>
-                {
-                    bu.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-                });
-            });
+            //services.AddCors(op => {
+            //    op.AddPolicy(name: encors, bu =>
+            //    {
+            //        bu.WithOrigins("https://localhost/4200").AllowAnyMethod().AllowAnyHeader();
+            //    });
+            //});
 
             services.Configure<JWT>(Configuration.GetSection("JWT"));
             services.AddIdentity<users, IdentityRole>().AddEntityFrameworkStores<Appcontext>();
+          //  services.AddIdentity<users, IdentityRole>();
             services.AddScoped<IAuthService, auth>();
             //to use JWT Gllobally
             services.AddAuthentication(o =>
@@ -70,9 +72,18 @@ namespace JwtTest
                 op.UseSqlServer(Configuration.GetConnectionString("con"));
             });
             services.AddControllers();
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "JwtTest", Version = "v1" });
+            });
+            services.AddCors(op =>
+            {
+                op.AddPolicy(name: MyAllowSpecificOrigins,
+                    builder => {
+                        builder.WithOrigins("http://localhost:4200")
+                        .AllowAnyMethod().AllowAnyHeader();
+                    });
             });
         }
 
@@ -87,9 +98,9 @@ namespace JwtTest
             }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
-            app.UseCors(encors);
+            app.UseCors(MyAllowSpecificOrigins);
+            
             app.UseAuthentication();
             app.UseAuthorization();
 

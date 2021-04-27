@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lenovo\\source\\repos\\JwtTest\\JwtTest\\JwtTest.csproj": {}
+    "C:\\Users\\Lenovo\\source\\repos\\JWT\\JwtTest\\JwtTest\\JwtTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lenovo\\source\\repos\\JwtTest\\JwtTest\\JwtTest.csproj": {
+    "C:\\Users\\Lenovo\\source\\repos\\JWT\\JwtTest\\JwtTest\\JwtTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\JwtTest\\JwtTest\\JwtTest.csproj",
+        "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\JWT\\JwtTest\\JwtTest\\JwtTest.csproj",
         "projectName": "JwtTest",
-        "projectPath": "C:\\Users\\Lenovo\\source\\repos\\JwtTest\\JwtTest\\JwtTest.csproj",
+        "projectPath": "C:\\Users\\Lenovo\\source\\repos\\JWT\\JwtTest\\JwtTest\\JwtTest.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\source\\repos\\JwtTest\\JwtTest\\obj\\",
+        "outputPath": "C:\\Users\\Lenovo\\source\\repos\\JWT\\JwtTest\\JwtTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

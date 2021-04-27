@@ -36,7 +36,7 @@ namespace JwtTest.services
                 lastName = rm.Lastname,
                 Email = rm.Email,
                 UserName = rm.Username,
-                DeptId=rm.deptid
+                DeptId = 100
             };
 
             var result = await _user.CreateAsync(user, rm.Password);
@@ -60,8 +60,7 @@ namespace JwtTest.services
                 Roles = new List<string> { "Student" },
                 Token = new JwtSecurityTokenHandler().WriteToken(token),
                 Username = user.UserName,
-                DeptID = user.DeptId
-                
+                DeptID = user.DeptId  
             };
         }
         public async Task<Authmodel> LoginAsync(Loginmodel lm)
@@ -127,6 +126,16 @@ namespace JwtTest.services
             //    return "Done";
             //return "Something went Wrong";
         }
+
+        public async Task<bool> resetPasswoord(ResetPassword pw)
+        {
+            var user = await _user.FindByIdAsync(pw.UserID);
+            var res = await _user.ChangePasswordAsync(user,pw.CurrentPassword,pw.NewPassword);
+          
+            return res.Succeeded;
+        }
+
+
     } 
 }
     
